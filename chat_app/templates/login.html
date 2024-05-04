@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styling/login.css' %}">
+    <link rel="stylesheet" href="{% static 'styling/login2.css' %}">
+</head>
+<body>
+    <div class="personality-matchmaking-app-">
+        <header class="typelight-bubble-header-for-p">
+            <div class="bubble-container">
+                <div class="nav-links">
+                    <div class="nav-link">
+                        <div class="nav-label">Explore</div>
+                    </div>
+                    <div class="nav-link1">
+                        <div class="nav-label1">How It Works</div>
+                    </div>
+                    <div class="nav-link2">
+                        <div class="nav-label2">Our Ethos</div>
+                    </div>
+                </div>
+                <div class="nav-links1">
+                    <div class="nav-link3">
+                        <div class="nav-label3">Why Vibe Us</div>
+                    </div>
+                    <div class="nav-link4">
+                        <div class="nav-label4">VibeGallery</div>
+                    </div>
+                    <div class="nav-link5">
+                        <div class="nav-label5">Get In Touch</div>
+                    </div>
+                </div>
+                <a id="link3" href="../home/Home.html">
+                    <div class="brand">
+                        <img class="icon" alt="" src="#" />
+                        <div class="brandname">Vibe Us</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <section class="property-1simple-centered-sig" id="top">
+            <div class="sign-up-container">
+                <form class="copy-component4" method="post">
+                    {% csrf_token %}
+                    <div class="frame-parent">
+                        <div class="image-lummi-categoryavat-wrapper">
+                            <img class="image-lummi-categoryavat" loading="lazy" alt="" src="{% static 'login_signup/img/643d57fbca1ceccdf484b106c6124322.jpg' %}" />
+
+                        </div>
+                        <h1 class="sign-up-heading">Login</h1>
+                        <div class="subheading-parent">
+                            <div class="subheading10">Welcome back!</div>
+                        </div>
+                        <div class="form">
+                            <div class="input">
+                                <div class="input-form">
+                                    <input class="text-container1" placeholder="Username" type="text" name="username" />
+                                </div>
+                                <div class="input-form1">
+                                    <input class="text-container2" placeholder="Password" type="password" name="password" />
+                                </div>
+                            </div>
+                            <button class="button2" type="submit">
+                                <div class="text-container3">
+                                    <div class="cta5">Login</div>
+                                    
+                                </div>
+                            </button>
+                            <div id="sign-up-n">
+                                Don't have an account?<a class="link-a2" href="{% url 'signup' %}"> Sign Up!</a>
+                            </div>
+                        </div>
+                        <div class="by-continuing-you">Terms & Privacy Agreement</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer class="typemega-menu-inverted-footer">
+            <div class="content6">
+                <div class="brand-parent">
+                    <div class="brand1">
+                        <img class="icon1" alt="" src="{% static 'login_signup/img/tinder.png' %}" />
+
+                        <div class="brandname1">Vibe Us</div>
+                    </div>
+                    <div class="brandname2">Your Vibe, Your Tribe</div>
+                </div>
+                <div class="links">
+                    <div class="list">
+                        <div class="list-heading">Company</div>
+                        <div class="list-link-item">About</div>
+                        <div class="list-link-item1">Careers</div>
+                        <div class="list-link-item2">Newsroom</div>
+                    </div>
+                    <div class="list1">
+                        <div class="list-heading1">Highlights</div>
+                        <div class="list-link-item3">Instant Matches</div>
+                        <div class="list-link-item4">Personality Cards</div>
+                        <div class="list-link-item5">Vibe Newsroom</div>
+                    </div>
+                    <div class="list2">
+                        <div class="list-heading2">Social</div>
+                        <div class="list-link-item6">Twitter</div>
+                        <div class="list-link-item7">Instagram</div>
+                        <div class="list-link-item8">Threads</div>
+                    </div>
+                    <div class="list3">
+                        <div class="list-heading3">Legal</div>
+                        <div class="list-link-item9">Terms</div>
+                        <div class="list-link-item10">Privacy</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

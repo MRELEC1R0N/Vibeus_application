@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styling/SignUp1.css' %}">
+    <link rel="stylesheet" href="{% static 'styling/SignUp2.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center">Join Now</h1>
+                <p class="text-center">Find Your Tribe Today!</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <!-- UserSignUpForm fields -->
+                    <div class="form-group">
+                        {{ user_form.username.label_tag }}
+                        {{ user_form.username }}
+                        {% if user_form.username.errors %}
+                            <div class="alert alert-danger">{{ user_form.username.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ user_form.email.label_tag }}
+                        {{ user_form.email }}
+                        {% if user_form.email.errors %}
+                            <div class="alert alert-danger">{{ user_form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ user_form.password1.label_tag }}
+                        {{ user_form.password1 }}
+                        {% if user_form.password1.errors %}
+                            <div class="alert alert-danger">{{ user_form.password1.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ user_form.password2.label_tag }}
+                        {{ user_form.password2 }}
+                        {% if user_form.password2.errors %}
+                            <div class="alert alert-danger">{{ user_form.password2.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <!-- UserProfileForm fields -->
+                    <div class="form-group">
+                        {{ profile_form.age.label_tag }}
+                        {{ profile_form.age }}
+                        {% if profile_form.age.errors %}
+                            <div class="alert alert-danger">{{ profile_form.age.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ profile_form.gender.label_tag }}
+                        {{ profile_form.gender }}
+                        {% if profile_form.gender.errors %}
+                            <div class="alert alert-danger">{{ profile_form.gender.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ profile_form.bio.label_tag }}
+                        {{ profile_form.bio }}
+                        {% if profile_form.bio.errors %}
+                            <div class="alert alert-danger">{{ profile_form.bio.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ profile_form.hobbies.label_tag }}
+                        {{ profile_form.hobbies }}
+                        {% if profile_form.hobbies.errors %}
+                            <div class="alert alert-danger">{{ profile_form.hobbies.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button class="btn btn-primary" type="submit">Register</button>
+                    <p class="text-center">
+                        Already have a VibeUs account?<a href="{% url 'login' %}"> Click me!</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

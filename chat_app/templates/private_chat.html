@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat with {{ other_user.username }}</title>
+        <link rel="stylesheet" href="{% static 'styling/chatcss.css' %}">
+    </head>
+</head>
+<body>
+    <h2>Chat with {{ other_user.username }}</h2>
+    <ul>
+        {% for message in messages %}
+            <li>{{ message.sender.username }}: {{ message.message }}</li>
+        {% empty %}
+            <li>No messages.</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+    <div class="background">
+
+    </div>
+</body>
+</html>
